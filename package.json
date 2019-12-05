@@ -1,0 +1,23 @@
+{
+  "name": "zaobao",
+  "version": "1.0.0",
+  "description": "每日早报，以前端技术体系为主要分享课题。根据：文章、工具、新闻、视频几大板块作为主要分类。",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosout/zaobao.git"
+  },
+  "author": "sosout",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sosout/zaobao/issues"
+  },
+  "homepage": "https://github.com/sosout/zaobao#readme",
+  "devDependencies": {
+    "vuepress": "^1.2.0"
+  }
+}
