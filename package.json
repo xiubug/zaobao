@@ -4,6 +4,11 @@
   "description": "每日早报，以前端技术体系为主要分享课题。根据：文章、工具、新闻、视频几大板块作为主要分类。",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "commit": "commit",
+    "lint:md": "lint-md ./docs/",
+    "lint:js": "eslint --fix .",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
@@ -18,6 +23,37 @@
   },
   "homepage": "https://github.com/sosout/zaobao#readme",
   "devDependencies": {
-    "vuepress": "^1.2.0"
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@commitlint/cli": "^7.3.2",
+    "@commitlint/config-conventional": "^7.3.1",
+    "@commitlint/prompt-cli": "^7.3.1",
+    "@commitlint/travis-cli": "^7.3.2",
+    "@vssue/vuepress-plugin-vssue": "^0.8.2",
+    "@vuepress/plugin-google-analytics": "^1.0.0-alpha.0",
+    "babel-7-jest": "^21.3.3",
+    "babel-jest": "^23.6.0",
+    "coveralls": "^3.0.6",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "husky": "^1.3.1",
+    "jest": "^23.6.0",
+    "lint-md": "^0.0.8",
+    "lint-staged": "^8.1.0",
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-baidu-google-analytics": "^1.0.0",
+    "vuepress-plugin-rss-support": "^1.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
